@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Say Hello</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'css/style.css') }}">
+</head>
+<body>
+    <img src="https://media.istockphoto.com/id/1065465342/vector/cute-vector-speech-bubble-icon-with-hello-greeting.jpg?s=612x612&w=0&k=20&c=dIq85nTuC9OGJAuuIUdz0u0EQg2N4pEpWzKxa8S0gbY=" alt="can't load image">
+    <br>
+    <form action="greet" method="post">
+
+        {% for messages in get_flashed_messages() %}
+            <p> {{messages}} </p>
+        {% endfor %}
+        <!-- <p>What's your name?</p> -->
+        <br>
+        <input type="text" name="name_input"><br>
+        <input type="submit" value="GREET" id="greet">
+    </form>
+</body>
+</html>
